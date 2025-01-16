@@ -5,6 +5,8 @@
 
 Note That : all apis are in the collection attached with examples ready to display on it . 
 
+Use command : php artisan db:seed --> to make data for the assessment 
+
 
  /Auth dir 
 
