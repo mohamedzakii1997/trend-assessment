@@ -65,6 +65,7 @@ Note That : all apis are in the collection attached with examples ready to displ
 
  2 ) GET {{local_url}}customers/orders/orderDetails/10 --> showing order detials , validating the order owner by using policy . 
 
+ 3 ) GET {{local_url}}customers/orders/index  --> fetching orders of the logged user with pagination .
 
  --------------------------------------------------------------------------------------------------------------------------------
 
