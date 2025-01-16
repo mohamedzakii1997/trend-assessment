@@ -55,7 +55,7 @@ Route::namespace('Customer')->prefix('customers')->group(function () {
 
         Route::prefix('orders')->group(function (){
 
-
+            Route::get('index', [OrderController::class, 'index']);
             Route::post('place-order', [OrderController::class, 'placeOrder'])->name('orders.place-order');
             Route::get('orderDetails/{id}', [OrderController::class, 'show']);
 

@@ -40,17 +40,17 @@ class OrderService extends LaravelServiceClass
 
     public function index()
     {
-
+        $conditions = ['user_id'=>auth()->user()->id];
         if (request('is_pagination')) {
-            list($items, $pagination) = parent::paginate($this->product_repo, false);
+            list($items, $pagination) = parent::paginate($this->order_repo, false,$conditions);
         } else {
-            $items = parent::list($this->product_repo, false);
+            $items = parent::list($this->order_repo, false,$conditions);
             $pagination = null;
         }
 
-        $items->load(['category']);
+        $items->load(['user','products']);
 
-        return $this->ok('products list',ProductResource::collection($items),$pagination);
+        return $this->ok('orders list',OrderResource::collection($items),$pagination);
 
     }
 
